@@ -20,7 +20,7 @@
     },
 	"plugins": ["@typescript-eslint", "prettier"],
     "rules": {
-        "prettier/prettier": ["error", { "singleQuote": true }],
+        "prettier/prettier": ["error", { "singleQuote": true, "tabWidth": 4, "printWidth": 90 }],
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/no-non-null-assertion": "off"
     }
