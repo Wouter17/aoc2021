@@ -1,5 +1,15 @@
-import { parseInput } from '../util';
+import fs from 'fs';
 
-const input = parseInput();
+let text: any = fs.readFileSync('./values.txt', 'utf-8');
+text = text.split(/\r?\n/);
+text = text.map(Number);
 
-// TODO: Complete Part 2
+let total = 0;
+
+for (let i = 3; i < text.length; i++) {
+    if (text[i] > text[i - 3]) {
+        total++;
+    }
+}
+
+console.log(total);
