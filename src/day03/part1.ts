@@ -1,6 +1,6 @@
-import fs from 'fs';
+import * as fs from 'fs';
 
-let text: any = fs.readFileSync('./values.txt', 'utf-8');
+let text: any = fs.readFileSync('./src/day03/input.txt', 'utf-8');
 text = text.split(/\r?\n/);
 
 let gamma: number[] = [];
@@ -17,4 +17,4 @@ const gammaResult: number = parseInt(gamma.join(''), 2);
 
 const epsilon = Math.pow(2, text[0].length) - 1 - gammaResult;
 
-console.log(epsilon * gammaResult);
+export default (epsilon * gammaResult);

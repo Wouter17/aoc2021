@@ -1,4 +1,7 @@
-import fs from 'fs';
+import * as fs from 'fs';
+
+let text: any = fs.readFileSync('./src/day03/input.txt', 'utf-8');
+text = text.split(/\r?\n/);
 
 const calculateFrequency = (arr: string[], pos: number) => {
     return arr.reduce(
@@ -6,9 +9,6 @@ const calculateFrequency = (arr: string[], pos: number) => {
         0
     );
 };
-
-let text: any = fs.readFileSync('./values.txt', 'utf-8');
-text = text.split(/\r?\n/);
 
 let filterDigit = 0;
 let filter: string;
@@ -29,4 +29,5 @@ while (co2Text.length > 1) {
     filterDigit++;
 }
 const co2Final = parseInt(co2Text[0], 2);
-console.log(oxygenFinal * co2Final);
+
+export default (oxygenFinal * co2Final);
