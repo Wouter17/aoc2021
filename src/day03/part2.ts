@@ -30,4 +30,4 @@ while (co2Text.length > 1) {
 }
 const co2Final = parseInt(co2Text[0], 2);
 
-export default (oxygenFinal * co2Final);
+export default oxygenFinal * co2Final;

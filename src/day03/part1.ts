@@ -17,4 +17,4 @@ const gammaResult: number = parseInt(gamma.join(''), 2);
 
 const epsilon = Math.pow(2, text[0].length) - 1 - gammaResult;
 
-export default (epsilon * gammaResult);
+export default epsilon * gammaResult;

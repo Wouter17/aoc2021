@@ -1,7 +1,7 @@
 {
   "name": "aoc-ts-template",
   "version": "1.0.0",
-  "description": "A TypeScript template for Advent of Code",
+  "description": "Advent of Code 2021",
   "main": "dist/index.js",
   "scripts": {
     "start": "rimraf dist && tsc && node ."
