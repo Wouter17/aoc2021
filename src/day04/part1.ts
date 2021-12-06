@@ -11,13 +11,15 @@ class Board {
     }
 
     isSolved(numbers: number[]): number[][] {
-        return (
-            this.horizontal.filter((value: number[]) =>
-                value.every((value) => numbers.includes(value))
-            ) ||
-            this.vertical.filter((value: number[]) =>
-                value.every((value) => numbers.includes(value))
-            )
+        const horizontal = this.horizontal.filter((value: number[]) =>
+            value.every((value) => numbers.includes(value))
+        );
+        if (horizontal.length > 0) {
+            return horizontal;
+        }
+
+        return this.vertical.filter((value: number[]) =>
+            value.every((value) => numbers.includes(value))
         );
     }
 }
@@ -48,16 +50,10 @@ const solvedBoard: Board = boards.filter(
     (value) => value.isSolved(numbersDraw.slice(0, index)).length > 0
 )[0];
 
-//const solvedRow = solvedBoard.isSolved(numbersDraw.slice(0, index))[0];
-
 const Unmarked: number[] = solvedBoard.horizontal
     .reduce((previousValue, currentValue) => previousValue.concat(currentValue), [])
     .filter((value) => !numbersDraw.slice(0, index).includes(value));
 
-/*const sumOfUnmarked = [
-    ...new Set(Unmarked.filter((value) => !numbersDraw.slice(0, index).includes(value))),
-].reduce((previousValue, currentValue) => previousValue + currentValue, 0);
-*/
 export default Unmarked.reduce(
     (previousValue, currentValue) => previousValue + currentValue,
     0
